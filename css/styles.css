@@ -142,6 +142,22 @@ ul {
   color: var(--nav-color);
 }
 
+.main-nav .item {
+  position: relative;
+}
+
+.current::after {
+  position: absolute;
+  display: inline-block;
+  content: "";
+  height: 4px;
+  width: 100%;
+  background-color: var(--nav-color);
+  border-radius: 2px;
+  bottom: 0;
+  left: 0;
+}
+
 .add-nav .link:hover,
 .add-nav .link:focus {
   color: var(--nav-color);
@@ -298,11 +314,6 @@ ul {
   margin-top: 0;
 }
 
-.product-photos {
-  display: flex;
-  margin: 0;
-}
-
 .title {
   font-weight: 700;
   font-size: 36px;
@@ -313,12 +324,42 @@ ul {
   margin-bottom: 50px;
 }
 
+.product-photos {
+  display: flex;
+  margin: 0;
+}
+
 .product-photos .item:not(:last-child) {
   margin-right: 30px;
 }
 
 .photo {
   display: block;
+  justify-content: center;
+}
+.product-thumb {
+  position: relative;
+}
+.product-app {
+  display: flex;
+  position: absolute;
+  height: 70px;
+  width: 100%;
+  background-color: rgba(47, 48, 58, 0.8);
+
+  bottom: 0;
+  left: 0;
+
+  align-items: center;
+  justify-content: center;
+}
+
+.decision {
+  display: block;
+
+  color: var(--add-text-color);
+
+  margin: 0;
 }
 /*********** TEAM SECTION **************/
 .team {
@@ -530,11 +571,44 @@ img {
 }
 .card {
   display: inline-block;
+  text-decoration: none;
 }
 .card:hover,
 .card:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
+.card-thumb {
+  position: relative;
+}
+
+.card-info:hover {
+  opacity: 1;
+  /* transform: translateY(0); */
+}
+
+.card-info {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(33, 150, 243, 0.9);
+  padding: 63px 24px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.card-text {
+  font-family: Roboto;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  color: var(--add-text-color);
+
+  margin: 0;
 }
 
 .project-name {
