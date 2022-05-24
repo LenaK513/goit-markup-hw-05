@@ -77,7 +77,7 @@ ul {
 
 /***********HEADER **********/
 .page-header {
-  border-bottom: 1px solid var(--buttom-line-portfolio);
+  /* border-bottom: 1px solid var(--buttom-line-portfolio); */
 }
 
 .header {
@@ -126,11 +126,13 @@ ul {
 
 .main-nav .link {
   color: var(--main-text-color);
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .add-nav .link {
   color: var(--second-text-color);
   align-items: center;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .main-nav .link:hover,
@@ -227,6 +229,7 @@ ul {
   background-color: var(--nav-color);
   padding: 10px 32px;
   min-width: 200px;
+  border: none;
   /* border-radius: 4px; */
   cursor: pointer;
   /* border-color: none; */
@@ -428,11 +431,12 @@ ul {
   text-decoration: none;
   height: 44px;
   width: 44px;
-  /* background-color: #da056f; */
-
+  background-color: none;
   justify-content: space-between;
   border-radius: 50%;
   align-items: center;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .snet-item:not(:last-child) {
@@ -442,6 +446,8 @@ ul {
 .logo-snet {
   fill: var(--sociai-icon-color);
   margin: 12px;
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .logo-item:hover,
@@ -478,6 +484,8 @@ ul {
   border: 1px solid var(--sociai-icon-color);
   border-radius: 4px;
   align-items: center;
+
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .client-item:hover,
@@ -487,6 +495,7 @@ ul {
 
 .client-logo {
   fill: var(--sociai-icon-color);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .client-item:hover .client-logo,
@@ -511,7 +520,7 @@ img {
 
 .apps {
   display: flex;
-  /* background-color: rgb(19, 209, 35); */
+
   margin-bottom: 50px;
   justify-content: center;
 }
@@ -533,6 +542,7 @@ img {
   letter-spacing: 0.03em;
   color: var(--add-nav-color);
   background-color: var(--button-text-color);
+  box-shadow: none;
 
   cursor: pointer;
   padding-top: 6px;
@@ -540,13 +550,16 @@ img {
   padding-right: 22px;
   padding-left: 22px;
   border-radius: 4px;
-  border-color: var(--button-text-color);
+
+  transition: backgroung-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .btn-ptfolio:hover,
 .btn-ptfolio:focus {
   color: var(--add-text-color);
   background-color: var(--nav-color);
-  box-shadow: 0px 4px 4px 0px rgb(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
 
 /*************SECTION PROJECTS **********************/
@@ -569,12 +582,15 @@ img {
   margin-left: 30px;
   margin-top: 30px;
 }
-.card {
+
+.item .card {
   display: inline-block;
   text-decoration: none;
+  box-shadow: none;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.card:hover,
-.card:focus {
+.item .card:hover,
+.item .card:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
@@ -715,4 +731,58 @@ img {
 }
 .bgc-footer {
   background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* *********************SECTION BACKDROP************************ */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.modal {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  width: 528px;
+  height: 581px;
+  background-color: var(--add-text-color);
+}
+
+.modal-button {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background-color: #fff;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  align-items: center;
+  justify-content: center;
+
+  margin-right: 8px;
+  margin-top: 8px;
+
+  position: absolute;
+  right: 0;
+}
+
+.modal-icon {
+  background-color: #fff;
 }
