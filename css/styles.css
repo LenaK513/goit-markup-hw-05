@@ -600,7 +600,8 @@ img {
   overflow: hidden;
 }
 
-.card:hover .card-info {
+.card:hover .card-info,
+.card:focus .card-info {
   opacity: 1;
   transform: translateY(0);
 }
